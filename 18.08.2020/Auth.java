@@ -9,5 +9,11 @@ if (login.equals("admin")) {
     String password = scanner.nextLine();
     if (password.equals("123")) { System.out.println("Доступ разрешен"); }
     else { System.out.println("Нет доступа"); } }
+if (login.equals("user")) {
+    System.out.println("Логин user принят, введите пароль");
+    String password = scanner.nextLine();
+    if (password.equals("321")) { System.out.println("Доступ разрешен"); }
+    else { System.out.println("Нет доступа"); } }
 else {System.out.println("Нет доступа"); }
-    }}
+    }
+}
