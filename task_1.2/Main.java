@@ -11,7 +11,7 @@ public class Main {
         System.out.print("три"); // лишняя строка
         System.out.print(" равно ");
         System.out.print(" будет "); // лишняя строка
-        System.out.print("пять");
-        System.out.print(a + b); // лишняя строка
+        System.out.print("пять"); // лишняя строка
+        System.out.print(a + b); 
     }
 }
