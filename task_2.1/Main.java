@@ -16,7 +16,6 @@ public class Main {
         else if (c>b) return b;
         else if (b>c) return c;
         else if (a>c) return c;
-        else if (c>b) return b;
         else return 0;
     }
     public static void main(String[] args) {
