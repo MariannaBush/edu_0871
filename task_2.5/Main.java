@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        //напишите тут ваш код
+        //вариант решения 1. Думаю над реализацией с помощью цикла.
     String a = "Мама";
     String b = "Мыла";
     String c = "Раму";
