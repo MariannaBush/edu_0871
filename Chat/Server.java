@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Server {
     static ArrayList<Socket> clients = new ArrayList<>();
-    private ArrayList<Socket> clientsName = new ArrayList<>();
+    static ArrayList<String> clientsName = new ArrayList<>();
     public static void main(String[] args) {
         Socket socket = null;
 
@@ -28,7 +28,7 @@ public class Server {
             //    clients.add(client);
            //     System.out.println("Клиент "+name+" подключился");
                 
-                out.writeUTF("Введите ник: "+clientsName(););
+                out.writeUTF("Введите ник: ");
                 clients.add();
                 Thread thread =new Thread(new Runnable() {
                     @Override
