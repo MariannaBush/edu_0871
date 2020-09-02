@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Server {
     static ArrayList<Socket> clients = new ArrayList<>();
-  //  private ArrayList<ClientNames> clients = new ArrayList<ClientNames>();
+    private ArrayList<Socket> clientsName = new ArrayList<>();
     public static void main(String[] args) {
         Socket socket = null;
 
@@ -27,7 +27,9 @@ public class Server {
            //     ClientNames client = new ClientNames(clients);
             //    clients.add(client);
            //     System.out.println("Клиент "+name+" подключился");
-
+                
+                out.writeUTF("Введите ник: "+clientsName(););
+                clients.add();
                 Thread thread =new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -37,7 +39,7 @@ public class Server {
                             //    System.out.println("Клиент прислал сообщение");
                             //    out.writeUTF("Сообщение: "+str+" принято");
                                 broadcastMsg(str);
-                                System.out.println("Клиент прислал сообщение: "+str);
+                                System.out.println("Клиент "+clientsName+" прислал сообщение: "+str);
                             }
 
                         }catch (IOException e) {
@@ -61,12 +63,13 @@ public class Server {
         }
     }
 
-//    public static void nickName(String str) {
-//        Scanner scan = new Scanner(System.in);
-//        if(scan.hasNext(name)){
-//            for(int i = 0; i < 10; i++){
-//                System.out.println("Привет! "+name);
-//            }
-//        }
-//    }
+
+    public static void clientsName(String str) {
+        Scanner scan = new Scanner(System.in);
+        if(scan.hasNext()){
+            for(int i = 0; i < 10; i++){
+                System.out.println("Привет! "+clientsName);
+            }
+        }
+    }
 }
