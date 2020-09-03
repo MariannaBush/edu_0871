@@ -1,8 +1,9 @@
 package server;
 
-import client.Client;
-
-import java.io.*;
+import javax.swing.text.StringContent;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -10,47 +11,42 @@ import java.util.Scanner;
 
 public class Server {
     static ArrayList<Socket> clients = new ArrayList<>();
-    static ArrayList<String> clientsName = new ArrayList<>();
+
+    // создаю коллекцию для хранения ников клиентов
+    static ArrayList<String> nickname = new ArrayList<>();
+
     public static void main(String[] args) {
         Socket socket = null;
-
         try {
             ServerSocket serverSocket = new ServerSocket(8189);
             System.out.println("Сервер запущен");
-
-            while (true) {
+            while (true){
                 socket = serverSocket.accept();
                 clients.add(socket);
                 DataInputStream in = new DataInputStream(socket.getInputStream());
                 DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-
-           //     ClientNames client = new ClientNames(clients);
-            //    clients.add(client);
-           //     System.out.println("Клиент "+name+" подключился");
-                
-                out.writeUTF("Введите ник: ");
-                clients.add();
-                Thread thread =new Thread(new Runnable() {
+             //   System.out.println(nickname+" зашел в чат!");
+                Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try {
+                            // добавляю имя в коллекцию
+                            String nickname = in.readUTF();
+                            out.writeUTF(nickname);
+                            System.out.println(nickname+" зашел в чат любителей кодить на Java");
                             while (true){
                                 String str = in.readUTF();
-                            //    System.out.println("Клиент прислал сообщение");
-                            //    out.writeUTF("Сообщение: "+str+" принято");
                                 broadcastMsg(str);
-                                System.out.println("Клиент "+clientsName+" прислал сообщение: "+str);
+                                System.out.println("Сообщение от "+nickname+": "+str);
                             }
-
-                        }catch (IOException e) {
+                        }catch (IOException e){
                             e.printStackTrace();
                         }
                     }
                 });
                 thread.start();
             }
-
-        } catch (IOException ex) {
+        }catch (IOException ex){
             ex.printStackTrace();
         }
     }
@@ -60,16 +56,6 @@ public class Server {
         for (Socket socket : clients){
             out = new DataOutputStream(socket.getOutputStream());
             out.writeUTF(str);
-        }
-    }
-
-
-    public static void clientsName(String str) {
-        Scanner scan = new Scanner(System.in);
-        if(scan.hasNext()){
-            for(int i = 0; i < 10; i++){
-                System.out.println("Привет! "+clientsName);
-            }
         }
     }
 }
