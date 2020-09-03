@@ -25,7 +25,7 @@ public class Server {
                 clients.add(socket);
                 DataInputStream in = new DataInputStream(socket.getInputStream());
                 DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-             //   System.out.println(nickname+" зашел в чат!");
+             
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
