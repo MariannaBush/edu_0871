@@ -18,20 +18,30 @@ public class Client {
                 @Override
                 public void run() {
                     System.out.println("Введите ник и нажмите enter: ");
-                    String nickname = "";
-                //    System.out.println(nickname+" зашел в чат!");
-                    while (true){
 
+                    while (true){
+                        String nickname = null;
                         String response = null;
                         try {
+                       
+
+                            nickname = in.readUTF();
                             response = in.readUTF();
                             System.out.println(response);
+                            while (true) {
+                            
+
+                                System.out.println(nickname+": "+response);
+                                break;
+
+                            }
                         } catch (IOException exception) {
                             exception.printStackTrace();
                         }
                     }
                 }
             });
+
             responseThread.start();
             while (true){
                 String str = scanner.nextLine();
