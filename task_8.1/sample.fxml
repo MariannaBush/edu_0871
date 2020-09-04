@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane alignment="center" hgap="10" prefHeight="327.0" prefWidth="473.0" style="-fx-background-color: #FFD4D4" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <HBox prefHeight="197.0" prefWidth="4000">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TextArea prefHeight="204.0" prefWidth="187.0">
+                     <VBox.margin>
+                        <Insets left="15.0" right="5.0" />
+                     </VBox.margin></TextArea>
+               </children>
+            </VBox>
+            <VBox prefHeight="114.0" prefWidth="300.0">
+               <children>
+                  <TextArea fx:id="messageWindow" prefHeight="200.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets left="5.0" right="15.0" />
+                     </VBox.margin></TextArea>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="35.0" prefWidth="400.0" GridPane.rowIndex="1">
+         <HBox prefHeight="35.0" prefWidth="297.0">
+            <children>
+               <TextField prefHeight="27.0" prefWidth="288.0">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+                  </HBox.margin></TextField>
+            </children>
+         </HBox>
+         <HBox prefHeight="35.0" prefWidth="100.0" />
+
+         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#send" prefHeight="27.0" prefWidth="185.0" style="-fx-background-color: #F2A7CC" text="Отправить" textFill="#660e83" textOverrun="CENTER_ELLIPSIS">
+            <HBox.margin>
+               <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Helvetica" size="14.0" />
+            </font></Button>
+
+      </HBox>
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
