@@ -27,24 +27,22 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Map<String,String> address = new HashMap<>();
+        System.out.println("Пожалуйста, введите город и нажмите enter");
         while (true) {
             String family = reader.readLine();
+            System.out.println("Пожалуйста, введите фамилию и нажмите enter");
             if (family.isEmpty()) { break; }
             String town = reader.readLine();
+            System.out.println("Пожалуйста, введите город и нажмите enter");
             if (town.isEmpty()) { break; }
             address.put(town,family);
         }
-        
+
         // Read the town
         String townName = reader.readLine();
         if (address.containsKey(townName)) {
-            System.out.println(address.get(townName));
+            System.out.println("Живут в городе: "+address.get(townName));
         }
-
-//                if (townName.equals(town)) {
-//                    String familyName = town.get(townName);
-//                    System.out.println(familyName);
-//                }
 
     }
 }
